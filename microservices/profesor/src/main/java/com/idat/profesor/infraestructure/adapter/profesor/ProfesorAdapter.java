@@ -40,7 +40,7 @@ public class ProfesorAdapter implements ProfesorRepository {
     @Override
     public Profesor save(Profesor profesor) {
         ProfesorData profesorData = profesorDataRepository.save(ProfesorMapper.MAPPER.toEntity(profesor));
-        return ProfesorMapper.MAPPER.toDomain(profesorData);
+        return ProfesorMapper.MAPPER.toModel(profesorData);
     }
 
 
@@ -53,9 +53,9 @@ public class ProfesorAdapter implements ProfesorRepository {
 
         if (profesorData.isPresent()){
             ProfesorData profesorData2 = ProfesorMapper.MAPPER.toEntity(profesor);
-            return ProfesorMapper.MAPPER.toDomain(profesorDataRepository.save(profesorData2))
+            return ProfesorMapper.MAPPER.toModel(profesorDataRepository.save(profesorData2));
         }
-        return null
+        return null;
     }
 
 

@@ -16,7 +16,7 @@ public class AperturaAdapter implements AperturaRepository {
 
     @Override
     public List<Apertura> findAll() {
-        return aperturaDataRepository.findAll();
+        return aperturaDataRepository.findAll()
                 .stream()
                 .map(AperturaMapper.MAPPER::toModel)
                 .toList();
